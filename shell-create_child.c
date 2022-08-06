@@ -35,3 +35,23 @@ void create_child(char **command, char *name, char **env, int count)
 		free_dp(command);
 	}
 }
+
+/**
+ * change_dir - function changes working directory
+ * @path: new directory
+ * Return: 1 = success/ 98 = fail
+ */
+int change_dir(const char *path)
+{
+	char *buf = NULL;
+	size_t size = 1024;
+
+	if (path == NULL)
+		path = getcwd(buf, size);
+	if (chdir(path) == -1)
+	{
+		perror(path);
+		return (98);
+	}
+	return (1);
+}
