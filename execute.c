@@ -14,7 +14,7 @@ void execute(char **command, char *name, char **env, int count)
 	struct stat st;
 	unsigned int i = 0;
 
-	if (_strcmp(command[0], "env") != )
+	if (_strcmp(command[0], "env") != 0)
 		print_env(env);
 	if (stat(command[0], &st) == 0)
 	{
